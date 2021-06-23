@@ -74,6 +74,7 @@ public class Admin {
     public void actualizarColas() {
     //Revisa que la segunda cola no este vacia
     //De lo contrario no hay nada que actualizar
+    actualizarListasInterfaz();
     if(!this.nivel2.isEmpty()) {
     //Recorre la cola actualizando los valores
     for(int i = 0; i < this.nivel2.size(); ++i) {
@@ -106,6 +107,7 @@ public class Admin {
         Pana pana_n3 = this.nivel3.poll();
 
         //Falta actualizar la lista
+        actualizarListasInterfaz();
 
         //Aumenta su contador
         pana_n3.subirContador();
@@ -149,8 +151,24 @@ public class Admin {
       }
     }
   }
+  
+    public void actualizarListasInterfaz(){
+        Interfaz.labelCola1.setText("Cola 1: " + valoresListas(nivel1));
+        Interfaz.labelCola2.setText("Cola 2: " + valoresListas(nivel2));
+        Interfaz.labelCola3.setText("Cola 3: " + valoresListas(nivel3));        
+    }
+    
+    public String valoresListas(Queue<Pana> lista){
+        String valores="";
+        Pana[] panas = new Pana[lista.size()];
+        lista.toArray(panas);
+        for (Pana pana : panas) {
+            valores += "-Pana N° " + pana.id +" ";
+        }
+        return valores;
+    }
 
-	public double generarDecimal(double min, double max){
-		return ((Math.random() * (max - min)) + min);
-	}
+    public double generarDecimal(double min, double max){
+            return ((Math.random() * (max - min)) + min);
+    }
 }
