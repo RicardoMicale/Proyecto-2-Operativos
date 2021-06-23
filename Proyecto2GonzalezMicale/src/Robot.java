@@ -26,6 +26,7 @@ public class Robot extends Thread {
             //En este caso se vuelve a encolar el pana para volver
             //a revisarlo
             Queue<Pana> cola_aux = Main.admin.obtenerCola(pana.prioridad);
+            cola_aux.poll();
             //Se vuelve a encolar el pana en la cola
             Main.admin.encolarPana(pana, cola_aux);
         }else if(probabilidad > 0.8) {
