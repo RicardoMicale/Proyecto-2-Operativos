@@ -37,19 +37,19 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
         labelCola1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         labelCola1.setForeground(new java.awt.Color(51, 51, 51));
-        labelCola1.setText("Cola 1");
+        labelCola1.setText("Cola 1:");
 
         labelCola2.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         labelCola2.setForeground(new java.awt.Color(51, 51, 51));
-        labelCola2.setText("Cola 2");
+        labelCola2.setText("Cola 2:");
 
         labelCola3.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         labelCola3.setForeground(new java.awt.Color(51, 51, 51));
-        labelCola3.setText("Cola 3");
+        labelCola3.setText("Cola 3:");
 
         labelRevision.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         labelRevision.setForeground(new java.awt.Color(51, 51, 51));
@@ -93,7 +93,7 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelCola1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 258, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
                         .addComponent(labelRevision))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -184,12 +184,12 @@ public class Interfaz extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel idRevision;
+    public static volatile javax.swing.JLabel idRevision;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel labelCola1;
-    private javax.swing.JLabel labelCola2;
-    private javax.swing.JLabel labelCola3;
+    public static volatile javax.swing.JLabel labelCola1;
+    public static volatile javax.swing.JLabel labelCola2;
+    public static volatile javax.swing.JLabel labelCola3;
     private javax.swing.JLabel labelRevision;
     // End of variables declaration//GEN-END:variables
 }

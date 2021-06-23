@@ -10,6 +10,7 @@ public class Robot extends Thread {
 
   public void realizarPruebas(Pana pana) {
     if(!(pana==null)){
+        actualizarRobotInterfaz(pana);
         System.out.println("Robot revisando pana N°: " + pana.id);
         try{
             Thread.sleep(tiempo*1000);
@@ -36,6 +37,12 @@ public class Robot extends Thread {
         System.out.println("No se obtuvo pana en robot.");
     }}
 
+    public void actualizarRobotInterfaz(Pana pana){
+        String id = String.valueOf(pana.id);
+        Interfaz.idRevision.setText(id);
+    }
+  
+  
   public double generarDecimal(double min, double max){
     return ((Math.random() * (max - min)) + min);
     }
