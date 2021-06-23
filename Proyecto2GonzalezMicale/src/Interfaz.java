@@ -37,7 +37,7 @@ public class Interfaz extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
         labelCola1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
         labelCola1.setForeground(new java.awt.Color(51, 51, 51));
