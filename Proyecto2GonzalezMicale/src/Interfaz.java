@@ -34,20 +34,21 @@ public class Interfaz extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         idRevision = new javax.swing.JLabel();
         btnSalir = new javax.swing.JButton();
+        labelMantenimiento = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(102, 153, 0));
 
-        labelCola1.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        labelCola1.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         labelCola1.setForeground(new java.awt.Color(51, 51, 51));
         labelCola1.setText("Cola 1:");
 
-        labelCola2.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        labelCola2.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         labelCola2.setForeground(new java.awt.Color(51, 51, 51));
         labelCola2.setText("Cola 2:");
 
-        labelCola3.setFont(new java.awt.Font("Ebrima", 1, 24)); // NOI18N
+        labelCola3.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
         labelCola3.setForeground(new java.awt.Color(51, 51, 51));
         labelCola3.setText("Cola 3:");
 
@@ -84,6 +85,10 @@ public class Interfaz extends javax.swing.JFrame {
             }
         });
 
+        labelMantenimiento.setFont(new java.awt.Font("Ebrima", 1, 14)); // NOI18N
+        labelMantenimiento.setForeground(new java.awt.Color(51, 51, 51));
+        labelMantenimiento.setText("Mantenimiento");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -93,12 +98,13 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(labelCola1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 252, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 284, Short.MAX_VALUE)
                         .addComponent(labelRevision))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(labelCola3)
-                            .addComponent(labelCola2))
+                            .addComponent(labelCola2)
+                            .addComponent(labelMantenimiento))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -112,18 +118,20 @@ public class Interfaz extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelCola1)
                     .addComponent(labelRevision))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(labelCola2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(25, 25, 25)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelCola2)
+                        .addGap(48, 48, 48)))
                 .addComponent(labelCola3)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelMantenimiento))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -134,9 +142,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -190,6 +196,7 @@ public class Interfaz extends javax.swing.JFrame {
     public static volatile javax.swing.JLabel labelCola1;
     public static volatile javax.swing.JLabel labelCola2;
     public static volatile javax.swing.JLabel labelCola3;
+    public static volatile javax.swing.JLabel labelMantenimiento;
     private javax.swing.JLabel labelRevision;
     // End of variables declaration//GEN-END:variables
 }
