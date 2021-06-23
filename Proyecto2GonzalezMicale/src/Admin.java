@@ -153,9 +153,9 @@ public class Admin {
   }
   
     public void actualizarListasInterfaz(){
-        Interfaz.labelCola1.setText("Cola 1: " + valoresListas(nivel1));
-        Interfaz.labelCola2.setText("Cola 2: " + valoresListas(nivel2));
-        Interfaz.labelCola3.setText("Cola 3: " + valoresListas(nivel3));        
+        Interfaz.labelCola1.setText("Cola 1: " + valoresListas(Main.admin.nivel1));
+        Interfaz.labelCola2.setText("Cola 2: " + valoresListas(Main.admin.nivel2));
+        Interfaz.labelCola3.setText("Cola 3: " + valoresListas(Main.admin.nivel3));        
     }
     
     public String valoresListas(Queue<Pana> lista){
