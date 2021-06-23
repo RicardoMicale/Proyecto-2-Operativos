@@ -29,6 +29,7 @@ public class Admin {
             Pana nuevoPana = new Pana(id, prioridad);
             idPanas++;
             Queue<Pana> colaPrioridad = obtenerCola(nuevoPana.prioridad);
+            System.out.println("Creado Pana "+nuevoPana.id);
             encolarPana(nuevoPana, colaPrioridad);
         }
         else{
@@ -37,7 +38,7 @@ public class Admin {
     }
     public void encolarPana(Pana pana, Queue<Pana> nivel) {
         nivel.add(pana);
-        System.out.println("Encolando Pana " + pana.id + "en nivel " + pana.prioridad);
+        System.out.println("Encolando Pana " + pana.id + " en nivel " + pana.prioridad);
     }
     
     public void elegirRevision(){
