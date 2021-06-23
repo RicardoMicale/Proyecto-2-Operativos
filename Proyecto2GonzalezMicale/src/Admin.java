@@ -39,6 +39,7 @@ public class Admin {
     public void encolarPana(Pana pana, Queue<Pana> nivel) {
         nivel.add(pana);
         System.out.println("Encolando Pana " + pana.id + " en nivel " + pana.prioridad);
+        actualizarListasInterfaz();
     }
     
     public void elegirRevision(){
@@ -74,12 +75,11 @@ public class Admin {
     public void actualizarColas() {
     //Revisa que la segunda cola no este vacia
     //De lo contrario no hay nada que actualizar
-    actualizarListasInterfaz();
+//    actualizarListasInterfaz();
     if(!this.nivel2.isEmpty()) {
     //Recorre la cola actualizando los valores
     for(int i = 0; i < this.nivel2.size(); ++i) {
         Pana pana_n2 = this.nivel2.poll();
-        //Falta actualizar la lista
         //Aumenta su contador
         pana_n2.contador = pana_n2.contador + 1;
         //Se revisa el numero del contador para ver si se 
@@ -106,8 +106,7 @@ public class Admin {
         for(int i = 0; i < this.nivel3.size(); ++i) {
         Pana pana_n3 = this.nivel3.poll();
 
-        //Falta actualizar la lista
-        actualizarListasInterfaz();
+//        actualizarListasInterfaz();
 
         //Aumenta su contador
         pana_n3.subirContador();
@@ -144,10 +143,7 @@ public class Admin {
         Pana reparado = this.mantenimiento.poll();
         Queue<Pana> cola_aux = obtenerCola(reparado.prioridad);
 
-        //falta Actualizar lista de mantenimiento de prioridad 4
-        
         this.encolarPana(reparado,cola_aux);
-        //falta Actualizar la cola de la prioridad del pana
       }
     }
   }
@@ -155,7 +151,8 @@ public class Admin {
     public void actualizarListasInterfaz(){
         Interfaz.labelCola1.setText("Cola 1: " + valoresListas(Main.admin.nivel1));
         Interfaz.labelCola2.setText("Cola 2: " + valoresListas(Main.admin.nivel2));
-        Interfaz.labelCola3.setText("Cola 3: " + valoresListas(Main.admin.nivel3));        
+        Interfaz.labelCola3.setText("Cola 3: " + valoresListas(Main.admin.nivel3)); 
+        Interfaz.labelMantenimiento.setText("Mantenimiento: " + valoresListas(Main.admin.mantenimiento));
     }
     
     public String valoresListas(Queue<Pana> lista){
