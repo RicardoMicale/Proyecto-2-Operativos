@@ -160,7 +160,7 @@ public class Admin {
         Pana[] panas = new Pana[lista.size()];
         lista.toArray(panas);
         for (Pana pana : panas) {
-            valores += "-Pana N° " + pana.id +" ";
+            valores += "-Pana N° " + pana.id + " ";
         }
         return valores;
     }
