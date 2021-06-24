@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Robot extends Thread {
     
-	int tiempo = 3;
+	int tiempo = 8;
 
   public void realizarPruebas(Pana pana) {
     if(!(pana==null)){
@@ -22,6 +22,7 @@ public class Robot extends Thread {
         //Cada 2 el administrador puede crear un pana nuevo
         if(probabilidad <= 0.3) {
             System.out.print("El pana N° "+pana.id+ " ha salido al mercado.");
+            actualizarPanasMercado(pana);
         }else if(0.3 < probabilidad && probabilidad <= 0.8) {
             //En este caso se vuelve a encolar el pana para volver
             //a revisarlo
@@ -34,13 +35,20 @@ public class Robot extends Thread {
             Queue<Pana> cola_aux = Main.admin.obtenerCola(4);
             Main.admin.encolarPana(pana, cola_aux);
         }
+        actualizarRobotInterfaz(pana);
     }else{
+        
         System.out.println("No se obtuvo pana en robot.");
     }}
 
     public void actualizarRobotInterfaz(Pana pana){
         String id = String.valueOf(pana.id);
         Interfaz.idRevision.setText(id);
+    }
+    
+    public void actualizarPanasMercado(Pana pana){
+        String id = String.valueOf(pana.id);
+        Interfaz.jTextAreaPanasMercado.append("-Pana N° " + id + " ");
     }
   
   

@@ -11,11 +11,12 @@ public class Main {
     public static Robot robot = new Robot();
     public static Admin admin = new Admin();
     public static boolean vivo = true;
+    public static int panasVendidos = 0;
     public static void main(String[] args) {
-        int ciclo = 1;
+    int ciclo = 1;
         try{
             i.setVisible(vivo);
-            Pana panaInicial = new Pana(0,1);
+            Pana panaInicial = new Pana(1,1);
             robot.realizarPruebas(panaInicial);
             while(vivo){
                 admin.elegirRevision();
