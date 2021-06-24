@@ -65,7 +65,7 @@ public class Admin {
         }else{
             System.out.println("Las colas estan vacias");
         }
-        actualizarColas();
+        actualizarContadores();
         actualizarListasInterfaz();
         Main.robot.realizarPruebas(primerPana);
         actualizarListasInterfaz();
@@ -93,7 +93,7 @@ public class Admin {
         }
     }
     
-    public void actualizarColas() {
+    public void actualizarContadores() {
     //Revisa que la segunda cola no este vacia
     //De lo contrario no hay nada que actualizar
 //    actualizarListasInterfaz();
