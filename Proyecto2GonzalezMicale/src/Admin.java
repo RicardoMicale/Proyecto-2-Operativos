@@ -2,7 +2,8 @@ import java.lang.Math;
 import java.util.*;
 /**
  *
- * @author carlo
+ * @author Ricardo Micale
+ *         Carlos Gonzalez
  */
 public class Admin {
     //Colas de prioridad

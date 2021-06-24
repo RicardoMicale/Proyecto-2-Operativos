@@ -6,7 +6,8 @@
 
 /**
  *
- * @author ricar
+ * @author Ricardo Micale
+ *         Carlos Gonzalez
  */
 public class Interfaz extends javax.swing.JFrame {
 

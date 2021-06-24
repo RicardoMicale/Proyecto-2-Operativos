@@ -1,7 +1,8 @@
 
 /**
  *
- * @author carlo
+ * @author Ricardo Micale
+ *         Carlos Gonzalez
  */
 public class Pana {
     int id, prioridad, contador;
