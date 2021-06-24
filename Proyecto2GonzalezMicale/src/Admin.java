@@ -89,7 +89,7 @@ public class Admin {
             case 4:
                 return mantenimiento;
             default:
-                return null;
+                return mantenimiento;
         }
     }
     

@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Robot extends Thread {
     
-	int tiempo = 8;
+	int tiempo = 10;
 
     /**
      *Toma un objeto pana y lo duerme por una cantidad de tiempo determinada.
@@ -34,7 +34,6 @@ public class Robot extends Thread {
             //En este caso se vuelve a encolar el pana para volver
             //a revisarlo
             Queue<Pana> cola_aux = Main.admin.obtenerCola(pana.prioridad);
-            cola_aux.poll();
             //Se vuelve a encolar el pana en la cola
             Main.admin.encolarPana(pana, cola_aux);
         }else if(probabilidad > 0.8) {
