@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class Robot extends Thread {
     
-	int tiempo = 3;
+	int tiempo = 8;
 
   public void realizarPruebas(Pana pana) {
     if(!(pana==null)){
@@ -34,7 +34,9 @@ public class Robot extends Thread {
             Queue<Pana> cola_aux = Main.admin.obtenerCola(4);
             Main.admin.encolarPana(pana, cola_aux);
         }
+        actualizarRobotInterfaz(pana);
     }else{
+        
         System.out.println("No se obtuvo pana en robot.");
     }}
 

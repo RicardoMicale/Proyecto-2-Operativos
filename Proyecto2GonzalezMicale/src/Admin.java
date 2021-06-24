@@ -30,6 +30,7 @@ public class Admin {
         }
     }
     public void encolarPana(Pana pana, Queue<Pana> nivel) {
+        actualizarListasInterfaz();
         nivel.add(pana);
         System.out.println("Encolando Pana " + pana.id + " en nivel " + pana.prioridad);
         actualizarListasInterfaz();
@@ -38,7 +39,7 @@ public class Admin {
     public void elegirRevision(){
         Pana primerPana =null;
         if(!(nivel1.isEmpty())){
-            primerPana = nivel1.poll();
+            primerPana = nivel1.poll();    
         }else if(!(nivel2.isEmpty())){
             primerPana = nivel2.poll();}
         else if(!(nivel3.isEmpty())){
@@ -47,7 +48,9 @@ public class Admin {
             System.out.println("Las colas estan vacias");
         }
         actualizarColas();
+        actualizarListasInterfaz();
         Main.robot.realizarPruebas(primerPana);
+        actualizarListasInterfaz();
     }
     
     public Queue<Pana> obtenerCola(int prioridad) {
@@ -125,6 +128,7 @@ public class Admin {
 
   public void mantenimientoListo() {
     //Si la cola de mantenimiento esta vacia no hay nada que hacer
+    actualizarListasInterfaz();
     if(!this.mantenimiento.isEmpty()) {
       
       double probabilidad = generarDecimal(0.0, 1.0);
