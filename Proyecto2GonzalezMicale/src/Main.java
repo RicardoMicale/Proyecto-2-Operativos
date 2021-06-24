@@ -15,7 +15,7 @@ public class Main {
         int ciclo = 1;
         try{
             i.setVisible(vivo);
-            Pana panaInicial = new Pana(0,1);
+            Pana panaInicial = new Pana(1,1);
             robot.realizarPruebas(panaInicial);
             while(vivo){
                 admin.elegirRevision();

@@ -11,16 +11,9 @@ public class Admin {
     Queue<Pana> nivel3 = new LinkedList<>();
     Queue<Pana> mantenimiento = new LinkedList<>();
 
-    // Constructor
-    // public Admin (){
-    // 	this.nivel1 = new LinkedList<>();
-    // 	this.nivel2 = new LinkedList<>();
-    // 	this.nivel3 = new LinkedList<>();
-//   this.mantenimiento = new LinkedList<>();
-    // }
 
     //Numero de id único de cada juguete. 
-    public static int idPanas = 1;
+    public static int idPanas = 2;
     public void crearPana(int ciclos){
         //Accede al codigo con una probabilidad de 70% y cada dos ciclos de revision.
         if(generarDecimal(0.0, 1.0) <= 0.7 && ciclos % 2 == 0){
