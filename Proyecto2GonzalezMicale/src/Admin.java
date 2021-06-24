@@ -102,14 +102,14 @@ public class Admin {
     for(int i = 0; i < this.nivel2.size(); ++i) {
         Pana pana_n2 = this.nivel2.poll();
         //Aumenta su contador
-        pana_n2.contador = pana_n2.contador + 1;
+        pana_n2.subirContador();
         //Se revisa el numero del contador para ver si se 
         //reinicia y se le sube la prioridad
         if(pana_n2.contador == 15) {
             //Se reinicia el contador
-            pana_n2.contador = 0;
+            pana_n2.reiniciarContador();
             //Se sube su prioridad
-            pana_n2.prioridad = pana_n2.prioridad + 1;
+            pana_n2.prioridad = pana_n2.prioridad - 1;
             //Se busca la cola de ese nivel de prioridad
             Queue<Pana> cola_aux = obtenerCola(pana_n2.prioridad);
             //Se encola en la cola de la prioridad nueva
@@ -137,7 +137,7 @@ public class Admin {
             //Se reinicia el contador
             pana_n3.reiniciarContador();
             //Se sube su prioridad
-            pana_n3.prioridad = pana_n3.prioridad + 1;
+            pana_n3.prioridad = pana_n3.prioridad - 1;
             //Se busca la cola de ese nivel de prioridad
             Queue<Pana> cola_aux = obtenerCola(pana_n3.prioridad);
             //Se encola en la cola de la prioridad nueva
