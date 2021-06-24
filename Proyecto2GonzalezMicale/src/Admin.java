@@ -15,6 +15,12 @@ public class Admin {
 
     //Numero de id único de cada juguete. 
     public static int idPanas = 2;
+
+    /**
+     *Crea un pana. La probabilidad al inicio elige si se crea y se encola el proceso.
+     * @param ciclos
+     * Parametro en Main que toma los ciclos de producción.
+     */
     public void crearPana(int ciclos){
         //Accede al codigo con una probabilidad de 70% y cada dos ciclos de revision.
         if(generarDecimal(0.0, 1.0) <= 0.7 && ciclos % 2 == 0){
@@ -30,6 +36,14 @@ public class Admin {
             System.out.println("No se creo Pana.");
         }
     }
+
+    /**
+     *Encola un objeto pana una vez creado o terminada su revisión
+     * @param pana
+     * El objeto Pana a que se le debe asignar una cola.
+     * @param nivel
+     * La cola donde el pana espera para su revisión. Es determinada por la obtenerCola()
+     */
     public void encolarPana(Pana pana, Queue<Pana> nivel) {
         actualizarListasInterfaz();
         nivel.add(pana);
@@ -37,6 +51,9 @@ public class Admin {
         actualizarListasInterfaz();
     }
     
+    /**
+     *Elige que pana debe ser revisado por orden de prioridad.
+     */
     public void elegirRevision(){
         Pana primerPana =null;
         if(!(nivel1.isEmpty())){
@@ -54,6 +71,13 @@ public class Admin {
         actualizarListasInterfaz();
     }
     
+    /**
+     *Obtiene la cola de prioridad en la que se encolara el Pana.
+     * @param prioridad
+     * El atributo entero de prioridad asignado a los Panas.
+     * @return
+     * Devuelve la cola a asignar.
+     */
     public Queue<Pana> obtenerCola(int prioridad) {
         switch(prioridad){
             case 1:
@@ -146,6 +170,9 @@ public class Admin {
     }
   }
   
+    /**
+     *Actualiza las colas de la interfaz gráfica.
+     */
     public void actualizarListasInterfaz(){
         Interfaz.labelCola1.setText("Cola 1: " + valoresListas(Main.admin.nivel1));
         Interfaz.labelCola2.setText("Cola 2: " + valoresListas(Main.admin.nivel2));
@@ -153,6 +180,13 @@ public class Admin {
         Interfaz.labelMantenimiento.setText("Mantenimiento: " + valoresListas(Main.admin.mantenimiento));
     }
     
+    /**
+     *Obtiene los valores escritos de cada cola
+     * @param lista
+     * La cola que se quieren obtener los elementos
+     * @return
+     * La cadena con el atributo id de los Panas en la cola.
+     */
     public String valoresListas(Queue<Pana> lista){
         String valores="";
         Pana[] panas = new Pana[lista.size()];
@@ -163,6 +197,15 @@ public class Admin {
         return valores;
     }
 
+    /**
+     *Genera un decimal aleatorio utilizando Math.random.
+     * @param min
+     * Valor minimo del número
+     * @param max
+     * Valor máximo del número
+     * @return
+     * Un número decimal aleatorio
+     */
     public double generarDecimal(double min, double max){
             return ((Math.random() * (max - min)) + min);
     }

@@ -9,13 +9,19 @@ public class Robot extends Thread {
     
 	int tiempo = 8;
 
-  public void realizarPruebas(Pana pana) {
+    /**
+     *Toma un objeto pana y lo duerme por una cantidad de tiempo determinada.
+     * Luego puede ser enviado al mercado o encolado de nuevo de acuerdo a las probabilidades.
+     * @param pana
+     * El objeto Pana a revisar.
+     */
+    public void realizarPruebas(Pana pana) {
     if(!(pana==null)){
         actualizarRobotInterfaz(pana);
         System.out.println("Robot revisando pana N°: " + pana.id);
         try{
             Thread.sleep(tiempo*1000);
-        }catch (Exception e) {
+        }catch (InterruptedException e) {
             System.out.println("Error en tiempo.");}
             //Se calcula la prioridad
         double probabilidad = generarDecimal(0.0, 1.0);
@@ -42,18 +48,36 @@ public class Robot extends Thread {
         System.out.println("No se obtuvo pana en robot.");
     }}
 
+    /**
+     *Actualiza la interfaz gráfica del Robot.
+     * @param pana
+     * Toma el atributo id para mostrarlo en revisión.
+     */
     public void actualizarRobotInterfaz(Pana pana){
         String id = String.valueOf(pana.id);
         Interfaz.idRevision.setText(id);
     }
     
+    /**
+     *Muestra una lista de los Panas que salieron al mercado.
+     * @param pana
+     * Toma los id de los Panas que salieron al mercado.
+     */
     public void actualizarPanasMercado(Pana pana){
         String id = String.valueOf(pana.id);
         Interfaz.jTextAreaPanasMercado.append("-Pana N° " + id + " ");
     }
   
-  
-  public double generarDecimal(double min, double max){
+    /**
+     *Genera un decimal aleatorio.
+     * @param min
+     * Valor minimo
+     * @param max
+     * Valor maximo
+     * @return
+     * Un número decimal aleatorio.
+     */
+    public double generarDecimal(double min, double max){
     return ((Math.random() * (max - min)) + min);
     }
 }

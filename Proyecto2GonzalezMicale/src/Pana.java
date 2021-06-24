@@ -13,10 +13,16 @@ public class Pana {
         this.contador = 0;
     }
 
+    /**
+     *Es llamado para subir el contador del pana.
+     */
     public void subirContador(){
         this.contador += 1;
     }
 
+    /**
+     *Reinicia el valor del contador del pana a cero.
+     */
     public void reiniciarContador() {
         this.contador = 0;
     }
