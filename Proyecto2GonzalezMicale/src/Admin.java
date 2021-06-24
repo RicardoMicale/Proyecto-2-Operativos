@@ -67,6 +67,7 @@ public class Admin {
         }
         actualizarContadores();
         actualizarListasInterfaz();
+        primerPana.reiniciarContador();
         Main.robot.realizarPruebas(primerPana);
         actualizarListasInterfaz();
     }
